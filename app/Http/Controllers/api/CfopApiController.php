@@ -4,6 +4,7 @@ namespace App\Http\Controllers\api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Cfop;
 
 class CfopApiController extends Controller
 {
@@ -15,7 +16,10 @@ class CfopApiController extends Controller
     public function index()
     {
         //
-        
+
+        $cfop = new Cfop();
+
+        return $cfop->getAllCfop();
     }
 
     /**
@@ -45,9 +49,13 @@ class CfopApiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($codigocfop)
     {
         //
+
+        $cfop = new Cfop();
+
+        return $cfop->getSearchCfop($codigocfop);
     }
 
     /**
