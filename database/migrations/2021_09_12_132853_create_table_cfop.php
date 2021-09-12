@@ -15,9 +15,9 @@ class CreateTableCfop extends Migration
     {
         Schema::create('cfop', function (Blueprint $table) {
             $table->increments('id');
-            $table->int('codigo');
+            $table->integer('codigo');
             $table->text('descricao', 350);
-            $table->int('utilizaDevolucao');
+            $table->integer('utilizaDevolucao');
         });
     }
 
